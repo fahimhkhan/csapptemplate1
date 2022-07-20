@@ -23,7 +23,7 @@ This is a iOS App template for [CSML App Studio](https://sites.google.com/ucsc.e
 
 ## Building the iOS App
 
-1. Install CocoaPods if you don't have it.
+1. Start by downloading/cloning this github repo to your local mac machine. Install CocoaPods if you don't have it.
 ```sudo gem install cocoapods```
 
 2. Install the pod to generate the workspace file by running the following command from inside the ```csapptemplate1``` directory:
@@ -49,5 +49,5 @@ The python script will autometically replace the icons and logos with your image
 
 7. Build and run the app in Xcode. You'll have to grant permissions for the app to use the device's camera. Point the camera at various objects and enjoy seeing how the model detects the objects of interest for your project.
 
-8. Replace the links in the **MenuViewController** to update the urls to the file upload webpage (line 29) and help webpage (line 39).
+8. Replace the links in the **MenuViewController** to update the urls to the file upload webpage (line 29) and help webpage (line 39). Rebuild the app to apply the changes to your app.
 ![alt text](urls.png?raw=true)
