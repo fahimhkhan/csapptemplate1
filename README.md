@@ -9,9 +9,9 @@ This is a iOS App template for [CSML App Studio](https://sites.google.com/ucsc.e
 
 ## Prerequisites
 
-* You must have Xcode installed
+* You must have Xcode installed on a Apple Mac computer.
 
-* You must have a valid Apple Developer ID
+* You should have a valid Apple Developer ID to distribute the app.
 
 * The demo app requires a camera and must be executed on a real iOS device. You can build it and run with the iPhone Simulator but the app raises a camera not found exception.
 
@@ -23,7 +23,7 @@ This is a iOS App template for [CSML App Studio](https://sites.google.com/ucsc.e
 
 ## Building the iOS App
 
-1. Start by downloading/cloning this github repo to your local mac machine. Install CocoaPods if you don't have it.
+1. Start by downloading/cloning this github repo to your local Mac machine. Install CocoaPods if you don't have it.
 ```sudo gem install cocoapods```
 
 2. Install the pod to generate the workspace file by running the following command from inside the ```csapptemplate1``` directory:
