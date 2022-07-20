@@ -37,6 +37,7 @@ At the end of this step you should have a file called ```CitizenScienceApp1.xcwo
 4. Please change the bundle identifier to a unique identifier and select your development team in **'General->Signing'** before building the application if you are using an iOS device.
 
 ![alt text](general.png?raw=true)
+![alt text](signing.png?raw=true)
 
 5. This app includes a default a MobileNet SSD model trained on [COCO dataset](http://cocodataset.org/). The input image size required is 300 X 300 X 3. You can download the model [here](https://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip). You can find more information on the research on object detection [here](https://github.com/tensorflow/models/tree/master/research/object_detection). You need to replace the detect.tflite and labelmap.txt with your custom trained detect.tflite and labelmap.txt.
 
@@ -47,3 +48,6 @@ At the end of this step you should have a file called ```CitizenScienceApp1.xcwo
 The python script will autometically replace the icons and logos with your images.
 
 7. Build and run the app in Xcode. You'll have to grant permissions for the app to use the device's camera. Point the camera at various objects and enjoy seeing how the model detects the objects of interest for your project.
+
+8. Replace the links in the **MenuViewController** to update the urls to the file upload webpage (line 29) and help webpage (line 39).
+![alt text](urls.png?raw=true)
