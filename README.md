@@ -34,7 +34,7 @@ If this command fails to install the cocoapods (which you may understand in the 
 ```pod update```
 At the end of this step you should have a file called ```CitizenScienceApp1.xcworkspace```
 
-3. Open **CitizenScienceApp1.xcworkspace** in Xcode.
+3. Open **CitizenScienceApp1.xcworkspace** in Xcode. (Warning: Do not open the **CitizenScienceApp1.xcodeproj**. It will fail if you try to build!)
 
 4. Please change the bundle identifier to a unique identifier and select your development team in **'General->Signing'** before building the application if you are using an iOS device.
 
