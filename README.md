@@ -25,6 +25,8 @@ This is a iOS App template for [CSML App Studio](https://sites.google.com/ucsc.e
 
 1. Start by downloading/cloning this github repo to your local Mac machine. Install CocoaPods if you don't have it.
 ```sudo gem install cocoapods```
+If this command fails to install the cocoapods (which you may understand in the next step), they to isntall it using home brew.
+```brew install cocoapods```
 
 2. Install the pod to generate the workspace file by running the following command from inside the ```csapptemplate1``` directory:
 ```pod install```
