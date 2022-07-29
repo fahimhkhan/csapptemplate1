@@ -23,13 +23,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>RipSnap will use your camera to take pictures/video.</string>
+	<string>The app will use your camera to take pictures/video.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>RipSnap will use your location to save EXIF data.</string>
+	<string>The app will use your location to save EXIF data.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>RipSnap will use your microphone to record audio for videos.</string>
+	<string>The app will use your microphone to record audio for videos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>RipSnap will access your photo library to save pictures/videos.</string>
+	<string>The app will access your photo library to save pictures/videos.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
