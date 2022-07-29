@@ -308,8 +308,8 @@ extension ViewController: CameraFeedManagerDelegate {
 
       let size = string.size(usingFont: self.displayFont)
 
-      //let objectOverlay = ObjectOverlay(name: string, borderRect: convertedRect, nameStringSize: size, color: inference.displayColor, font: self.displayFont)
-        let objectOverlay = ObjectOverlay(name: string, borderRect: convertedRect, nameStringSize: size, color: UIColor.red, font: self.displayFont)
+      let objectOverlay = ObjectOverlay(name: string, borderRect: convertedRect, nameStringSize: size, color: inference.displayColor, font: self.displayFont)
+      //let objectOverlay = ObjectOverlay(name: string, borderRect: convertedRect, nameStringSize: size, color: UIColor.red, font: self.displayFont)
         
       objectOverlays.append(objectOverlay)
     }
