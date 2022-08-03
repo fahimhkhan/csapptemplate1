@@ -70,8 +70,8 @@ class CameraViewController: UIViewController {
         cameraManager.showAccessPermissionPopupAutomatically = true
         cameraManager.cameraOutputMode = .videoOnly
         cameraManager.shouldUseLocationServices = true
-        cameraManager.imageAlbumName =  "RipSnap"
-        cameraManager.videoAlbumName =  "RipSnap"
+        cameraManager.imageAlbumName =  "CSMLData"
+        cameraManager.videoAlbumName =  "CSMLData"
         cameraManager.animateShutter = true
     }
     
