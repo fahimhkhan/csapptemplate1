@@ -29,9 +29,9 @@ If this command fails to install the cocoapods (which you may understand in the 
 ```brew install cocoapods```
 
 2. Install the pod to generate the workspace file by running the following command from inside the ```csapptemplate1``` directory:
-```pod install```
+```arch -x86_64 pod install``` (if m1/m2 based Mac) or ```pod install``` (if Intel based Mac)
   If you have installed this pod before and that command doesn't work, try
-```pod update```
+```arch -x86_64 pod update``` (if m1/m2 based Mac) or ```pod update``` (if Intel based Mac)
 At the end of this step you should have a file called ```CitizenScienceApp1.xcworkspace```
 
 3. Open **CitizenScienceApp1.xcworkspace** in Xcode. (Warning: Do not open the **CitizenScienceApp1.xcodeproj**. It will fail if you try to build!)
