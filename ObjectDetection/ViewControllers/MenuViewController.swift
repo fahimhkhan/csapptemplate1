@@ -35,14 +35,4 @@ class MenuViewController: UIViewController
         }        
     }
     
-    @IBAction func helpButtonPressed(_ sender: UIButton) {
-        if let url = URL(string: "https://sites.google.com/ucsc.edu/csmlappstudio"){
-            let config = SFSafariViewController.Configuration()
-            config.entersReaderIfAvailable = true
-            
-            let vc = SFSafariViewController(url: url, configuration: config)
-            present(vc, animated: true)
-        }
-    }
-    
 }

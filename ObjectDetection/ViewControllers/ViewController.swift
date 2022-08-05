@@ -97,13 +97,26 @@ class ViewController: UIViewController,
     override var preferredStatusBarStyle: UIStatusBarStyle {
       return .lightContent
     }
+    
+    var successHandler: (() -> Void)?
+    var errorHandler: ((Error) -> Void)?
+
+    func writeToPhotoAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveComplete), nil)
+    }
+
+    @objc func saveComplete(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            errorHandler?(error)
+        } else {
+            successHandler?()
+        }
+    }
 
     
   // MARK: Button Actions
   @IBAction func onClickResumeButton(_ sender: Any) {
-
     cameraFeedManager.resumeInterruptedSession { (complete) in
-
       if complete {
         self.resumeButton.isHidden = true
         self.cameraUnavailableLabel.isHidden = true
@@ -113,8 +126,13 @@ class ViewController: UIViewController,
       }
     }
   }
-
- 
+    
+    @IBAction func photoActionButton(_ sender: UIButton) {
+        let renderer = UIGraphicsImageRenderer(size: overlayView.bounds.size)
+        let snapshot = renderer.image { ctx in overlayView.drawHierarchy(in: overlayView.bounds, afterScreenUpdates: true) }
+        self.writeToPhotoAlbum(image: snapshot)
+    }
+    
     
   func presentUnableToResumeSessionAlert() {
     let alert = UIAlertController(

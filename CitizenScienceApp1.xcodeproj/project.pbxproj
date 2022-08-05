@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		11DCAB998880C0FCFDDBBB08 /* Pods_ObjectDetection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBE718FF8011C77670073AF /* Pods_ObjectDetection.framework */; };
 		537F94C626DC34F000202368 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537F94C526DC34F000202368 /* CameraViewController.swift */; };
+		53A8645A289D897300011AB5 /* files in Resources */ = {isa = PBXBuildFile; fileRef = 53A86458289D897200011AB5 /* files */; };
+		53A8645B289D897300011AB5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A86459289D897300011AB5 /* HelpViewController.swift */; };
 		AA055D8921622F3E00B25948 /* labelmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA055D8821622F3E00B25948 /* labelmap.txt */; };
 		AA119EA2217F337300DE46CF /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA119EA1217F337300DE46CF /* ModelDataHandler.swift */; };
 		AA16E59B21807BAC00D9E153 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16E59921807A7000D9E153 /* InfoCell.swift */; };
@@ -34,6 +36,8 @@
 		2EBE718FF8011C77670073AF /* Pods_ObjectDetection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjectDetection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F7AD24BA64B048CD5DBEB8 /* Pods-ObjectDetection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectDetection.release.xcconfig"; path = "Target Support Files/Pods-ObjectDetection/Pods-ObjectDetection.release.xcconfig"; sourceTree = "<group>"; };
 		537F94C526DC34F000202368 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		53A86458289D897200011AB5 /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
+		53A86459289D897300011AB5 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		AA055D8821622F3E00B25948 /* labelmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labelmap.txt; sourceTree = "<group>"; };
 		AA119EA1217F337300DE46CF /* ModelDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
 		AA16E59921807A7000D9E153 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 		AA9AC5D1212D43BD000B4E9D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				53A86458289D897200011AB5 /* files */,
+				53A86459289D897300011AB5 /* HelpViewController.swift */,
 				AA16E59C218081AA00D9E153 /* InferenceViewController.swift */,
 				AA9AC5E1212D4520000B4E9D /* ViewController.swift */,
 				B4E7BFD726DB6B3E008721A9 /* MenuViewController.swift */,
@@ -228,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AA9AC596212D39FC000B4E9D /* Build configuration list for PBXProject "CitizenScienceApp" */;
+			buildConfigurationList = AA9AC596212D39FC000B4E9D /* Build configuration list for PBXProject "CitizenScienceApp1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -251,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A8645A289D897300011AB5 /* files in Resources */,
 				AAB1116D21511218008C215D /* detect.tflite in Resources */,
 				AA9AC5A9212D39FD000B4E9D /* LaunchScreen.storyboard in Resources */,
 				AA9AC5A6212D39FD000B4E9D /* Assets.xcassets in Resources */,
@@ -336,6 +343,7 @@
 				B4E7BFD826DB6B3E008721A9 /* MenuViewController.swift in Sources */,
 				AA9AC59F212D39FC000B4E9D /* AppDelegate.swift in Sources */,
 				AA9AC5D7212D43E0000B4E9D /* PreviewView.swift in Sources */,
+				53A8645B289D897300011AB5 /* HelpViewController.swift in Sources */,
 				AA16E59B21807BAC00D9E153 /* InfoCell.swift in Sources */,
 				537F94C626DC34F000202368 /* CameraViewController.swift in Sources */,
 				AA16E59D218081AA00D9E153 /* InferenceViewController.swift in Sources */,
@@ -545,7 +553,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA9AC596212D39FC000B4E9D /* Build configuration list for PBXProject "CitizenScienceApp" */ = {
+		AA9AC596212D39FC000B4E9D /* Build configuration list for PBXProject "CitizenScienceApp1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA9AC5C1212D39FD000B4E9D /* Debug */,

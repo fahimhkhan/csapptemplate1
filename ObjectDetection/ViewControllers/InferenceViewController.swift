@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import UIKit
+import WebKit
 
 // MARK: InferenceViewControllerDelegate Method Declarations
 protocol InferenceViewControllerDelegate {
@@ -23,7 +24,7 @@ protocol InferenceViewControllerDelegate {
   func didChangeThreadCount(to count: Int)
 }
 
-class InferenceViewController: UIViewController {
+class InferenceViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
   // MARK: Sections and Information to display
   private enum InferenceSections: Int, CaseIterable {
@@ -56,8 +57,9 @@ class InferenceViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var threadStepper: UIStepper!
   @IBOutlet weak var stepperValueLabel: UILabel!
-
-  // MARK: Constants
+    @IBOutlet weak var webviewb: WKWebView!
+    
+    // MARK: Constants
   private let normalCellHeight: CGFloat = 27.0
   private let separatorCellHeight: CGFloat = 42.0
   private let bottomSpacing: CGFloat = 21.0
@@ -93,6 +95,12 @@ class InferenceViewController: UIViewController {
     threadStepper.maximumValue = Double(threadCountLimit)
     threadStepper.minimumValue = Double(minThreadCount)
     threadStepper.value = Double(currentThreadCount)
+      
+      webviewb.uiDelegate = self
+      webviewb.navigationDelegate = self
+
+      let url = Bundle.main.url(forResource: "info", withExtension: "html", subdirectory: "files")!
+      webviewb.loadFileURL(url, allowingReadAccessTo: url)
 
   }
 
@@ -115,6 +123,19 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
 
     return InferenceSections.allCases.count
   }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (_: WKNavigationActionPolicy) -> Void) {
+        if navigationAction.navigationType == .linkActivated,
+          let reqURL = navigationAction.request.url {
+          UIApplication.shared.open(reqURL, options: [:], completionHandler: nil)
+          decisionHandler(.cancel)
+
+        } else {
+          decisionHandler(.allow)
+        }
+      }
+
+
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 

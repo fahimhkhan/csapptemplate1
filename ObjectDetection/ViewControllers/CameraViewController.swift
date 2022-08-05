@@ -21,7 +21,7 @@ class CameraViewController: UIViewController {
     @IBOutlet var cameraView: UIView!
     @IBOutlet var askForPermissionsLabel: UILabel!
     @IBOutlet var cameraButton: UIButton!
-    
+    @IBOutlet var photoButton: UIButton!
     
     let lightBlue = UIColor(red: 24 / 255, green: 125 / 255, blue: 251 / 255, alpha: 1)
     let redColor = UIColor(red: 229 / 255, green: 77 / 255, blue: 67 / 255, alpha: 1)
@@ -92,7 +92,7 @@ class CameraViewController: UIViewController {
     
     @IBAction func recordButtonClicked(_ sender: UIButton) {
         cameraButton.isSelected = !cameraButton.isSelected
-        cameraButton.setTitle("STOP", for: UIControl.State.selected)
+        cameraButton.setTitle("STOP RECORDING", for: UIControl.State.selected)
         
         cameraButton.backgroundColor = cameraButton.isSelected ? redColor : lightBlue
         if sender.isSelected {
@@ -105,6 +105,7 @@ class CameraViewController: UIViewController {
             }
         }
     }
+    
     
    
     @IBAction func askForCameraPermissions() {
@@ -124,5 +125,20 @@ class CameraViewController: UIViewController {
         }
     }
     
+}
+
+public extension Data {
+    func printExifData() {
+        let cfdata: CFData = self as CFData
+        let imageSourceRef = CGImageSourceCreateWithData(cfdata, nil)
+        let imageProperties = CGImageSourceCopyMetadataAtIndex(imageSourceRef!, 0, nil)!
+        
+        let mutableMetadata = CGImageMetadataCreateMutableCopy(imageProperties)!
+        
+        CGImageMetadataEnumerateTagsUsingBlock(mutableMetadata, nil, nil) { _, tag in
+            print(CGImageMetadataTagCopyName(tag)!, ":", CGImageMetadataTagCopyValue(tag)!)
+            return true
+        }
+    }
 }
 
