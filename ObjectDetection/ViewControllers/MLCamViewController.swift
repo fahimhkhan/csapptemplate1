@@ -20,7 +20,7 @@ class MLCamViewController: UIViewController {
     @IBOutlet var cameraView: UIView!
     @IBOutlet var askForPermissionsLabel: UILabel!
     @IBOutlet var cameraButton: UIButton!
-    
+    @IBOutlet var recordTimeLabel: UIButton!
     
     
     let lightBlue = UIColor(red: 24 / 255, green: 125 / 255, blue: 251 / 255, alpha: 1)
@@ -85,6 +85,14 @@ class MLCamViewController: UIViewController {
             
             self?.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func formatSeconds(seconds: UInt) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(seconds))
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "mm:ss"
+        return(dateFormatter.string(from: date))
     }
     
     // MARK: - @IBActions
