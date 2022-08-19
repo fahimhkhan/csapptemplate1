@@ -5,7 +5,16 @@
 
 ## Overview
 
-This is a iOS App template for [CSML App Studio](https://sites.google.com/ucsc.edu/csmlappstudio/detection). This app is created based on the [TensorFlow Lite object detection iOS example app](https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/ios). However, a lot of original work is done on the base app. The detects the objects (bounding boxes and classes) in the frames seen by your device's back camera, using a quantized [MobileNet SSD](https://github.com/tensorflow/models/tree/master/research/object_detection) model trained on your custom dataset using the CSML App Studio. These instructions walk you through building and running the app on an iOS device.
+This is a iOS App template for [CSML App Studio](https://sites.google.com/ucsc.edu/csmlappstudio/detection). This app is an original work that used resources from the following github repositiories,
+
+- https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/ios
+
+- https://github.com/imaginary-cloud/CameraManager
+
+
+
+
+The app detects the objects (bounding boxes and classes) in the frames seen by your device's back camera, using a quantized [MobileNet SSD](https://github.com/tensorflow/models/tree/master/research/object_detection) model trained on your custom dataset using the CSML App Studio. These instructions walk you through building and running the app on an iOS device.
 
 ## Prerequisites
 
@@ -28,6 +37,8 @@ This is a iOS App template for [CSML App Studio](https://sites.google.com/ucsc.e
 If this command fails to install the cocoapods (which you may understand in the next step), they to isntall it using home brew.
 ```brew install cocoapods```
 
+Optional: you can rename the ```CitizenScienceApp1.xcodeproj``` inside the ```csapptemplate1``` directory and the new name will reflect in the next steps.
+
 2. Install the pod to generate the workspace file by running the following command from inside the ```csapptemplate1``` directory:
 ```arch -x86_64 pod install``` (if m1/m2 based Mac) or ```pod install``` (if Intel based Mac)
   If you have installed this pod before and that command doesn't work, try
@@ -36,14 +47,14 @@ At the end of this step you should have a file called ```CitizenScienceApp1.xcwo
 
 3. Open **CitizenScienceApp1.xcworkspace** in Xcode. (Warning: Do not open the **CitizenScienceApp1.xcodeproj**. It will fail if you try to build!)
 
-4. Please change the bundle identifier to a unique identifier and select your development team in **'General->Signing'** before building the application if you are using an iOS device.
+4. Please change the Bundle Identifier to a unique identifier and select your development team in **'General->Signing'** before building the application if you are using an iOS device. Also, change the Display Name to the name you want to see with your app icon.
 
 ![alt text](general.png?raw=true)
 ![alt text](signing.png?raw=true)
 
 5. This app includes a default a MobileNet SSD model trained on [COCO dataset](http://cocodataset.org/). The input image size required is 300 X 300 X 3. You can download the model [here](https://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip). You can find more information on the research on object detection [here](https://github.com/tensorflow/models/tree/master/research/object_detection). You need to replace the detect.tflite and labelmap.txt with your custom trained detect.tflite and labelmap.txt.
 
-6. For adding custom icon and logo for the app, you need to replace the files in the csapptemplate1 >> ObjectDetection >>  Assets.xcassets folder. A python script (create_icon_logo.py) is provided for that. Put your icon and logo images (.bmp, .jpg, or .png) in the Assets.xcassets and run the puthon script as follows,
+6. For adding custom icon and logo for the app, you need to replace the files in the ```csapptemplate1 >> ObjectDetection >>  Assets.xcassets``` folder. A python script (create_icon_logo.py) is provided for that. Put your icon and logo images (.bmp, .jpg, or .png) in the Assets.xcassets and run the puthon script as follows,
 
 ```python create_icon_logo.py <name of your icon file> <name of your logo file>```
 
