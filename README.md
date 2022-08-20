@@ -54,13 +54,28 @@ At the end of this step you should have a file called ```CitizenScienceApp1.xcwo
 
 5. This app includes a default a MobileNet SSD model trained on [COCO dataset](http://cocodataset.org/). The input image size required is 300 X 300 X 3. You can download the model [here](https://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip). You can find more information on the research on object detection [here](https://github.com/tensorflow/models/tree/master/research/object_detection). You need to replace the detect.tflite and labelmap.txt with your custom trained detect.tflite and labelmap.txt.
 
-6. For adding custom icon and logo for the app, you need to replace the files in the ```csapptemplate1 >> ObjectDetection >>  Assets.xcassets``` folder. A python script (create_icon_logo.py) is provided for that. Put your icon and logo images (.bmp, .jpg, or .png) in the Assets.xcassets and run the puthon script as follows,
+6. Build and run the app in Xcode. You'll have to grant permissions for the app to use the device's camera. Point the camera at various objects and enjoy seeing how the model detects the objects of interest for your project.
+
+## Customizing GUI (Optional)
+
+7. For adding custom icon and logo for the app, you need to replace the files in the ```csapptemplate1 >> ObjectDetection >>  Assets.xcassets``` folder. A python script (create_icon_logo.py) is provided for that. Put your icon and logo images (.bmp, .jpg, or .png) in the Assets.xcassets and run the puthon script as follows,
 
 ```python create_icon_logo.py <name of your icon file> <name of your logo file>```
 
 The python script will autometically replace the icons and logos with your images.
 
-7. Build and run the app in Xcode. You'll have to grant permissions for the app to use the device's camera. Point the camera at various objects and enjoy seeing how the model detects the objects of interest for your project.
+8. If you want to change the text, color, etc., of various buttons in the app, you can do that in the "Main" in Xcode, as shown below.
 
-8. Replace the links in the **MenuViewController** to update the urls to the file upload webpage (line 29) and help webpage (line 39). Rebuild the app to apply the changes to your app.
-![alt text](urls.png?raw=true)
+![alt text](gui_color.png?raw=true)
+
+9. You may provide some short information in the slideable info panel in the camera view with ML detection within the app (as shown in the image below). This information file can be provided by replacing/updating the "info.html" in the ```csapptemplate1 >> ObjectDetection >>  ViewControllers >> files``` folder.
+
+**Tip:** Html files can be edited without writing code using simple and free online tools like https://onlinehtmleditor.dev/
+
+![alt text](info_panel.png?raw=true)
+
+10. You may provide an offline help file in the app connected to the HELP button in the main menu. This help file can be provided by replacing/updating the "help.html" in the ```csapptemplate1 >> ObjectDetection >>  ViewControllers >> files``` folder. 
+
+11. If you want to connect the app to your website with more detailed help, the link can be provided in "line 4" of the "data.txt" file in the ```csapptemplate1 >> ObjectDetection >>  ViewControllers >> files``` folder.
+
+12. If you want to connect the app to a website where users can upload images/videos captured by the app, the link can be provided in "line 2" of the "data.txt" file in the ```csapptemplate1 >> ObjectDetection >>  ViewControllers >> files``` folder. This link will be connected to the UPLOAD button in the main menu.
